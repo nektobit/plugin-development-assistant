@@ -9,11 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Archive Release
-        uses: thedoctor0/zip-release@master
+        uses: papeloto/action-zip@v1
         with:
-          filename: 'plugin-development-assistant.zip'
-          directory: 'plugin-development-assistant'
-          exclusions: '*.git* /*node_modules/* .editorconfig'
+          files: plugin-development-assistant/
+          dest: plugin-development-assistant
 
       - name: Upload Release
         uses: ncipollo/release-action@v1
