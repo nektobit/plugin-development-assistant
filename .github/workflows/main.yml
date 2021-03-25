@@ -10,3 +10,9 @@ jobs:
       with:
         filename: 'plugin-development-assistant.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig'
+        
+    - name: Upload Release
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "plugin-development-assistant.zip"
+        token: ${{ secrets.GITHUB_TOKEN }}
