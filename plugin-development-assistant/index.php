@@ -2,7 +2,7 @@
 /*
 * Plugin Name: Plugin development assistant
 * Description: WordPress plugin that helps you develop WordPress plugins
-* Version: 1.0.0
+* Version: 1.0.2
 * Author: Dmitrii Nektobit
 * Author URI: https://nektobit.ru
 *
@@ -32,4 +32,13 @@ function highlights_dev_plugins() {
 			color: gray;
 		}
   </style>";
+}
+
+add_filter( 'plugin_row_meta', 'filter_function_name_3705', 10, 4 );
+function filter_function_name_3705( $plugin_meta, $plugin_file, $plugin_data, $status ){
+	if(strpos($plugin_file, '[development]')) {
+		//$plugin_meta[] = 'test';
+	}
+
+	return $plugin_meta;
 }
